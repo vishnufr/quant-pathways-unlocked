@@ -11,6 +11,7 @@ import {
   ArrowLeft, ArrowRight, Play, CheckCircle2, 
   Clock, BookOpen, Code, FileText, Trophy
 } from "lucide-react";
+import CodeEditor from "@/components/CodeEditor";
 import { toast } from "@/hooks/use-toast";
 
 const Lesson = () => {
@@ -255,38 +256,10 @@ const Lesson = () => {
                 </TabsContent>
 
                 <TabsContent value="code" className="mt-6">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Practice Exercise</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="bg-foreground/5 rounded-lg p-4 font-mono text-sm">
-                        <pre className="text-muted-foreground">
-{`# Practice: ${lesson.title}
-# Try implementing what you learned!
-
-import numpy as np
-import pandas as pd
-
-# Your code here...
-def practice_exercise():
-    """
-    Implement the concepts from this lesson.
-    """
-    pass
-
-# Test your implementation
-if __name__ == "__main__":
-    practice_exercise()
-    print("Great job! 🎉")
-`}
-                        </pre>
-                      </div>
-                      <p className="text-sm text-muted-foreground mt-4">
-                        💡 Tip: Open your favorite Python IDE or Jupyter notebook to practice these concepts.
-                      </p>
-                    </CardContent>
-                  </Card>
+                  <CodeEditor
+                    title={lesson.title}
+                    defaultCode={`# Practice: ${lesson.title}\n# Try implementing what you learned!\n\nimport numpy as np\nimport pandas as pd\n\n# Your code here...\ndef practice_exercise():\n    """\n    Implement the concepts from this lesson.\n    """\n    pass\n\n# Test your implementation\nif __name__ == "__main__":\n    practice_exercise()\n    print("Great job! 🎉")`}
+                  />
                 </TabsContent>
               </Tabs>
 
