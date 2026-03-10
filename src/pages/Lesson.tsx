@@ -11,6 +11,7 @@ import {
   ArrowLeft, ArrowRight, Play, CheckCircle2, 
   Clock, BookOpen, Code, FileText, Trophy
 } from "lucide-react";
+import CodeEditor from "@/components/CodeEditor";
 import { toast } from "@/hooks/use-toast";
 
 const Lesson = () => {
