@@ -53,6 +53,7 @@ const Navigation = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
             <Link to="/auth">
               <Button variant="outline" size="sm">
                 Sign In
